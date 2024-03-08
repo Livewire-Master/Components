@@ -4,6 +4,7 @@ namespace App\Livewire\User;
 
 use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
@@ -50,6 +51,10 @@ class Profile extends Component
     {
         return view('livewire.user.profile', $this->bag())
             ->layout('components.layouts.with-navigation')
+            ->response(static function (Response $response)
+            {
+                $response->header('X-FOO', 'SabzLearn');
+            })
         ;
     }
 }

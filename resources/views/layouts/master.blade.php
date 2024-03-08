@@ -39,6 +39,12 @@
                     User Profile
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('page.assets') }}">
+                    Assets
+                </a>
+            </li>
         </ul>
     </nav>
     <hr>

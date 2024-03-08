@@ -13,12 +13,18 @@
             </li>
             <li>
                 <a style="color: white" href="{{ route('page.welcome', ['email' => 'hi@armin.expert']) }}">
-                    Welcome Armin
+                    Welcome
                 </a>
             </li>
             <li>
                 <a style="color: white" href="{{ route('page.user-profile', ['user' => '1']) }}">
-                    User Profile
+                    Users
+                </a>
+            </li>
+
+            <li>
+                <a style="color: white" href="{{ route('page.assets') }}">
+                    Assets
                 </a>
             </li>
         </ul>

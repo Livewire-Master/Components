@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Assets as AssetsPage;
 use App\Livewire\Clocks as ClocksPage;
 use App\Livewire\Post\Index as PostsPage;
 use App\Livewire\Todo\Index as TodoPage;
@@ -25,6 +26,7 @@ Route::get('posts', PostsPage::class)->name('page.posts');
 Route::get('todo', TodoPage::class)->name('page.todo');
 Route::get('welcome/{email}', WelcomePage::class)->name('page.welcome');
 Route::get('users/{user}', UserProfilePage::class)->name('page.user-profile');
+Route::get('assets', AssetsPage::class)->name('page.assets');
 Route::get('create-user', static function ()
 {
     $time = time();
