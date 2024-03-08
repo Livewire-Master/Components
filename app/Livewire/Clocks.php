@@ -5,6 +5,8 @@ namespace App\Livewire;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
+/*#[Layout('components.layouts.with-navigation')]*/
+
 class Clocks extends Component
 {
     /**
@@ -14,6 +16,9 @@ class Clocks extends Component
      */
     public function render(): View
     {
-        return view('livewire.clocks');
+        return view('livewire.clocks')
+            ->extends('layouts.master')
+            ->section('app')
+        ;
     }
 }
