@@ -3,10 +3,11 @@
 namespace App\Livewire;
 
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 /*#[Layout('components.layouts.with-navigation')]*/
-
+#[Title('.::Clocks::.')]
 class Clocks extends Component
 {
     /**

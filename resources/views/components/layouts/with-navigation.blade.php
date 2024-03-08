@@ -10,5 +10,12 @@
     <x-header/>
 
     {{ $slot }}
+
+<footer style="text-align: center">
+    <hr>
+    <p style="text-align: center">
+        {{ $copyright ?? 'All right reserved' }}
+    </p>
+</footer>
 </body>
 </html>

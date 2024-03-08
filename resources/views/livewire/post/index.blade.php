@@ -1,3 +1,7 @@
+<x-slot:copyright>
+    Copyright by posts page
+</x-slot:copyright>
+
 <div>
     <h1>
         Posts Page

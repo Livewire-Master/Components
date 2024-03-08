@@ -4,6 +4,7 @@ namespace App\Livewire\Todo;
 
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Index extends Component
@@ -59,6 +60,7 @@ class Index extends Component
      * @return View
      */
     #[Layout('components.layouts.with-navigation')]
+    #[Title('.::Todo::.')]
     public function render(): View
     {
         return view('livewire.todo.index', $this->bag());

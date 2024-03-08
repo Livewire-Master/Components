@@ -25,6 +25,7 @@ class Index extends Component
     public function render(): View
     {
         return view('livewire.post.index', $this->bag())
-            ->layout('components.layouts.with-navigation');
+            ->layout('components.layouts.with-navigation')
+            ->title('.::Posts::.');
     }
 }
