@@ -23,15 +23,24 @@
         >
             Add
         </button>
+
+        <button
+            type="button"
+            wire:click="resetTasks"
+        >
+            Reset
+        </button>
     </form>
     <hr>
+
     <div>
         <h2>Total Tasks: {{ count($tasks) }}</h2>
         <ul>
             @foreach($tasks as $task)
-                <li>
-                    <p>{{ $task }}</p>
-                </li>
+                <livewire:todo.item
+                    :task="$task"
+                    :key="'task-' . $loop->index"
+                />
             @endforeach
         </ul>
     </div>

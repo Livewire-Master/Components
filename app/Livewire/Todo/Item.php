@@ -5,41 +5,30 @@ namespace App\Livewire\Todo;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
-class Index extends Component
+class Item extends Component
 {
     /**
-     * User entrance
+     * Task title
      *
      * @var string $task
      */
     public string $task = '';
 
     /**
-     * User task list
+     * Task status
      *
-     * @var array $tasks
+     * @var bool $isDone
      */
-    public array $tasks = [];
+    public bool $isDone = false;
 
     /**
-     * Add user entered task
+     * Toggle task status
      *
      * @return void
      */
-    public function addTask(): void
+    public function toggle(): void
     {
-        $this->tasks[] = $this->task;
-        $this->reset('task');
-    }
-
-    /**
-     * Reset all tasks
-     *
-     * @return void
-     */
-    public function resetTasks(): void
-    {
-        $this->reset();
+        $this->isDone = !$this->isDone;
     }
 
     /**
@@ -59,6 +48,6 @@ class Index extends Component
      */
     public function render(): View
     {
-        return view('livewire.todo.index', $this->bag());
+        return view('livewire.todo.item', $this->bag());
     }
 }
