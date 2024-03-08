@@ -1,29 +1,32 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\User;
 
+use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class Welcome extends Component
+#[Title('.::User Profile::.')]
+class Profile extends Component
 {
     /**
-     * User email
+     * Current User
      *
-     * @var string $email
+     * @var User $user
      */
-    public string $email = '';
+    public User $user;
 
     /**
-     * Mounting the component
+     * Mount the component
      *
-     * @param string $email
+     * @param User $user
      *
      * @return void
      */
-    public function mount(string $email): void
+    public function mount(User $user): void
     {
-        $this->email = strtoupper($email);
+        $this->user = $user;
     }
 
     /**
@@ -33,7 +36,9 @@ class Welcome extends Component
      */
     protected function bag(): array
     {
-        return [];
+        return [
+            'users' => User::all()
+        ];
     }
 
     /**
@@ -43,9 +48,8 @@ class Welcome extends Component
      */
     public function render(): View
     {
-        return view('livewire.welcome', $this->bag())
+        return view('livewire.user.profile', $this->bag())
             ->layout('components.layouts.with-navigation')
-            ->title(".::Welcome $this->email::.")
         ;
     }
 }

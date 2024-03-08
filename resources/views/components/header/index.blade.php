@@ -16,6 +16,11 @@
                     Welcome Armin
                 </a>
             </li>
+            <li>
+                <a style="color: white" href="{{ route('page.user-profile', ['user' => '1']) }}">
+                    User Profile
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
