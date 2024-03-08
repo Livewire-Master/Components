@@ -22,6 +22,18 @@ class Item extends Component
     public bool $isDone = false;
 
     /**
+     * Mounting the component
+     *
+     * @param string $task
+     *
+     * @return void
+     */
+    public function mount(string $task): void
+    {
+        $this->task = strtoupper($task);
+    }
+
+    /**
      * Toggle task status
      *
      * @return void

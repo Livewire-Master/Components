@@ -28,6 +28,11 @@
                     Todo
                 </a>
             </li>
+            <li>
+                <a href="{{ route('page.welcome', ['email' => 'hi@armin.expert']) }}">
+                    Welcome Armin
+                </a>
+            </li>
         </ul>
     </nav>
     <hr>

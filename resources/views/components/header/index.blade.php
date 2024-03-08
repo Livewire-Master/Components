@@ -11,6 +11,11 @@
             <li>
                 <a style="color: white" href="{{ route('page.todo') }}">Todo</a>
             </li>
+            <li>
+                <a style="color: white" href="{{ route('page.welcome', ['email' => 'hi@armin.expert']) }}">
+                    Welcome Armin
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
