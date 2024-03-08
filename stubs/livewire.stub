@@ -12,7 +12,7 @@ class [class] extends Component
      *
      * @return array
      */
-    public function bag(): array
+    protected function bag(): array
     {
         return [];
     }

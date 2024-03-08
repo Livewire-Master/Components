@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('clocks', Clocks::class);
 Route::get('posts', App\Livewire\Post\Index::class);
+Route::get('todo', \App\Livewire\Todo\Index::class);
