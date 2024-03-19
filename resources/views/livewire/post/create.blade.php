@@ -38,6 +38,15 @@
         @endif
     </div>
     <div>
+        <hr>
+        <label for="input-date">
+            Date Picker *
+        </label>
+        <br>
+        <input id="input-date" type="text" data-picker>
+        <hr>
+    </div>
+    <div>
         <h3>Recent Posts</h3>
         <ul>
             @foreach($posts as $post)
@@ -50,3 +59,30 @@
         </ul>
     </div>
 </div>
+
+@assets
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js" defer></script>
+@endassets
+
+@assets
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+@endassets
+
+@script
+<script>
+    new Pikaday({ field: $wire.$el.querySelector('[data-picker]') });
+
+    setInterval(tick, 1000);
+
+    let isPing = true;
+
+    function tick()
+    {
+        let content = (isPing ? 'ping' : 'pong');
+        console.log(`[posts-create] ${content}`);
+        $wire.title =  content;
+        $wire.description += `${content} - `
+        isPing = !isPing;
+    }
+</script>
+@endscript

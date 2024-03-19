@@ -19,3 +19,9 @@
         <p>All rights reserved.</p>
     </footer>
 </div>
+
+@script
+<script>
+    console.log('[posts-index] component initialized...');
+</script>
+@endscript

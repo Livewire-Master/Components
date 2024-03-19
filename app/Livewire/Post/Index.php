@@ -3,6 +3,7 @@
 namespace App\Livewire\Post;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 use Livewire\Component;
 
 class Index extends Component
@@ -26,6 +27,13 @@ class Index extends Component
     {
         return view('livewire.post.index', $this->bag())
             ->layout('components.layouts.with-navigation')
-            ->title('.::Posts::.');
+            ->title('.::Posts::.')
+            ->response(
+                static function (Response $response)
+                {
+                    $response->header('X-MY-SECRET-HEADER', 'V3RY-$ECR3T');
+                }
+            )
+        ;
     }
 }
